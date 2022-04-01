@@ -14,17 +14,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        // MOVE CHARACTER 
-        //        agent.SetDestination(hit.point);
-        //    }
-        //}    
         float x = Input.GetAxis("Horizontal"); // * speed * Time.deltaTime;
         float y = Input.GetAxis("Vertical"); // * speed * Time.deltaTime;
         Vector3 movement;
@@ -35,3 +24,14 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.Translate(movement * speed * Time.deltaTime);
     }
 }
+//if (Input.GetMouseButtonDown(0))
+//{
+//    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+//    RaycastHit hit;
+
+//    if (Physics.Raycast(ray, out hit))
+//    {
+//        // MOVE CHARACTER 
+//        agent.SetDestination(hit.point);
+//    }
+//}    
