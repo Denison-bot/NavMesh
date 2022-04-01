@@ -37,31 +37,32 @@ public class EnemyAI : MonoBehaviour
 
     //}
 
-    //IEnumerator ChasingState()
-    //{
-    //    Debug.Log("Chase: Enter");
-    //    while (state == State.chasing)
-    //    {
-    //        agent.SetDestination(playerPosition);
-    //        yield return 0;
-    //    }
-    //    Debug.Log("Chase: Exit");
-    //}
+    IEnumerator ChasingState()
+    {
+        Debug.Log("Chase: Enter");
+        while (state == State.chasing)
+        {
+            agent.SetDestination(playerPosition);
+            yield return 0;
+        }
+        Debug.Log("Chase: Exit");
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        state = State.patrolling;
+        //state = State.patrolling;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerPosition = player.transform.position;
+        agent.SetDestination(playerPosition);
 
-        if (sightBox.GetComponent<chaseTrigger>().chasing == true)
-        {
-            state = State.chasing;
-        }
+        //if (sightBox.GetComponent<chaseTrigger>().chasing == true)
+        //{
+        //    state = State.chasing;
+        //}
     }
 }
